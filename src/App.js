@@ -1,14 +1,10 @@
 import React from 'react';
-
+import NavBar from './components/NavBar';
+import './styles/base.scss';
+ 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit test
-        </p>
-      </header>
-    </div>
+    <NavBar />
   );
 }
 
