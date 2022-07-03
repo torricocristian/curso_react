@@ -1,0 +1,13 @@
+.title{
+    margin-bottom: 25px;
+    
+    &__primary{
+        letter-spacing: .4px;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
