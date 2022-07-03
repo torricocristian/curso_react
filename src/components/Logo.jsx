@@ -1,10 +1,12 @@
-import React from 'react';
-import '../styles/logo.scss';
+import '../assets/styles/logo.scss';
+import logo from '../assets/images/logo.png';
 
-export const Logo = () => {
+const Logo = () => {
   return (
     <a href="/" className="logo">
-        Tiendita-Torrico
+      <img src={logo} alt="Logo" />
     </a>
   )
 }
+
+export default Logo

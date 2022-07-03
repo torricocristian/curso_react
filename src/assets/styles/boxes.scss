@@ -1,0 +1,28 @@
+.icon-box{
+    display: flex;
+    align-items: center;
+
+    .icon{
+        margin-right: 10px;
+        i{
+            font-size: 2.2rem;
+        }
+    }
+
+    .data{
+        display: flex;
+        flex-direction: column;
+        
+        span{
+            font-size: .8rem;
+            line-height: .8rem;
+            margin-bottom: 4px;
+
+            &.text-bottom{
+                font-size: 1rem;
+                line-height: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

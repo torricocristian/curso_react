@@ -1,0 +1,507 @@
+@font-face {
+    font-family: "riode";
+    src: url("../fonts/riode.eot");
+    src: url("../fonts/riode.eot") format("embedded-opentype"), url("../fonts/riode.ttf") format("truetype"), url("../fonts/riode.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class*=" d-icon-"],
+[class^="d-icon-"] {
+    display: inline-block;
+    line-height: 1;
+}
+[class*=" d-icon-"]:before,
+[class^="d-icon-"]:before {
+    font-family: "riode" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.d-icon-truck:before {
+    content: "";
+}
+.d-icon-service:before {
+    content: "";
+}
+.d-icon-secure:before {
+    content: "";
+}
+.d-icon-lock:before {
+    content: "";
+}
+.d-icon-percent:before {
+    content: "";
+}
+.d-icon-layer:before {
+    content: "";
+}
+.d-icon-alert:before {
+    content: "";
+}
+.d-icon-database:before {
+    content: "";
+}
+.d-icon-money:before {
+    content: "";
+}
+.d-icon-shoppingbag:before {
+    content: "";
+}
+.d-icon-t-shirt1:before {
+    content: "";
+}
+.d-icon-t-shirt2:before {
+    content: "";
+}
+.d-icon-hat:before {
+    content: "";
+}
+.d-icon-officebag:before {
+    content: "";
+}
+.d-icon-handbag:before {
+    content: "";
+}
+.d-icon-backpack:before {
+    content: "";
+}
+.d-icon-shoes:before {
+    content: "";
+}
+.d-icon-pillow:before {
+    content: "";
+}
+.d-icon-dress:before {
+    content: "";
+}
+.d-icon-loungewear:before {
+    content: "";
+}
+.d-icon-desktop:before {
+    content: "";
+}
+.d-icon-laptop:before {
+    content: "";
+}
+.d-icon-gamepad1:before {
+    content: "";
+}
+.d-icon-wireless:before {
+    content: "";
+}
+.d-icon-projector:before {
+    content: "";
+}
+.d-icon-drone1:before {
+    content: "";
+}
+.d-icon-drone2:before {
+    content: "";
+}
+.d-icon-radio:before {
+    content: "";
+}
+.d-icon-battery:before {
+    content: "";
+}
+.d-icon-plugin:before {
+    content: "";
+}
+.d-icon-memory:before {
+    content: "";
+}
+.d-icon-ball:before {
+    content: "";
+}
+.d-icon-basketball1:before {
+    content: "";
+}
+.d-icon-babycare:before {
+    content: "";
+}
+.d-icon-card:before {
+    content: "";
+}
+.d-icon-gamepad2:before {
+    content: "";
+}
+.d-icon-camera1:before {
+    content: "";
+}
+.d-icon-camera2:before {
+    content: "";
+}
+.d-icon-babywear:before {
+    content: "";
+}
+.d-icon-abacus:before {
+    content: "";
+}
+.d-icon-pot:before {
+    content: "";
+}
+.d-icon-freezer:before {
+    content: "";
+}
+.d-icon-cook:before {
+    content: "";
+}
+.d-icon-student:before {
+    content: "";
+}
+.d-icon-category:before {
+    content: "";
+}
+.d-icon-basketball2:before {
+    content: "";
+}
+.d-icon-watch:before {
+    content: "";
+}
+.d-icon-tcard:before {
+    content: "";
+}
+.d-icon-heartbeat:before {
+    content: "";
+}
+.d-icon-watch-round:before {
+    content: "";
+}
+.d-icon-washbowl:before {
+    content: "";
+}
+.d-icon-bridge-lamp:before {
+    content: "";
+}
+.d-icon-lamp:before {
+    content: "";
+}
+.d-icon-sofa:before {
+    content: "";
+}
+.d-icon-sofa2:before {
+    content: "";
+}
+.d-icon-bed:before {
+    content: "";
+}
+.d-icon-table:before {
+    content: "";
+}
+.d-icon-table-lamp:before {
+    content: "";
+}
+.d-icon-table-tv:before {
+    content: "";
+}
+.d-icon-mirror:before {
+    content: "";
+}
+.d-icon-volume:before {
+    content: "";
+}
+.d-icon-bars2:before {
+    content: "";
+}
+.d-icon-bars:before {
+    content: "";
+}
+.d-icon-phone:before {
+    content: "";
+}
+.d-icon-user:before {
+    content: "";
+}
+.d-icon-search:before {
+    content: "";
+}
+.d-icon-search2:before {
+    content: "";
+}
+.d-icon-bag:before {
+    content: "";
+}
+.d-icon-map:before {
+    content: "";
+}
+.d-icon-info:before {
+    content: "";
+}
+.d-icon-refresh:before {
+    content: "";
+}
+.d-icon-left-arrow:before {
+    content: "";
+}
+.d-icon-right-arrow:before {
+    content: "";
+}
+.d-icon-down-arrow:before {
+    content: "";
+}
+.d-icon-up-arrow:before {
+    content: "";
+}
+.d-icon-ruler:before {
+    content: "";
+}
+.d-icon-zoom:before {
+    content: "";
+}
+.d-icon-right-circle:before {
+    content: "";
+}
+.d-icon-left-circle:before {
+    content: "";
+}
+.d-icon-up-circle:before {
+    content: "";
+}
+.d-icon-down-circle:before {
+    content: "";
+}
+.d-icon-angle-right:before {
+    content: "";
+}
+.d-icon-angle-left:before {
+    content: "";
+}
+.d-icon-angle-up:before {
+    content: "";
+}
+.d-icon-angle-down:before {
+    content: "";
+}
+.d-icon-star:before {
+    content: "";
+}
+.d-icon-star-full:before {
+    content: "";
+}
+.d-icon-heart:before {
+    content: "";
+}
+.d-icon-heart-full:before {
+    content: "";
+}
+.d-icon-close:before {
+    content: "";
+}
+.d-icon-play-circle:before {
+    content: "";
+}
+.d-icon-home:before {
+    content: "";
+}
+.d-icon-filter-2:before {
+    content: "";
+}
+.d-icon-switch:before {
+    content: "";
+}
+.d-icon-switch-left-on:before {
+    content: "";
+}
+.d-icon-switch-right-on:before {
+    content: "";
+}
+.d-icon-filter-3:before {
+    content: "";
+}
+.d-icon-check:before {
+    content: "";
+}
+.d-icon-alert-solid:before {
+    content: "";
+}
+.d-icon-headphone:before {
+    content: "";
+}
+.d-icon-mode-grid:before {
+    content: "";
+}
+.d-icon-mode-list:before {
+    content: "";
+}
+.d-icon-cancel:before {
+    content: "";
+}
+.d-icon-instagram:before {
+    content: "";
+}
+.d-icon-solid-check:before {
+    content: "";
+}
+.d-icon-play-solid:before {
+    content: "";
+}
+.d-icon-mobile:before {
+    content: "";
+}
+.d-icon-minus:before {
+    content: "";
+}
+.d-icon-plus:before {
+    content: "";
+}
+.d-icon-wifi:before {
+    content: "";
+}
+.d-icon-times:before {
+    content: "";
+}
+.d-icon-times-circle:before {
+    content: "";
+}
+.d-icon-random:before {
+    content: "";
+}
+.d-icon-th-list:before {
+    content: "";
+}
+.d-icon-rocket:before {
+    content: "";
+}
+.d-icon-map-marker:before {
+    content: "";
+}
+.d-icon-birthday-cake:before {
+    content: "";
+}
+.d-icon-gift:before {
+    content: "";
+}
+.d-icon-female:before {
+    content: "";
+}
+.d-icon-clock:before {
+    content: "";
+}
+.d-icon-comments:before {
+    content: "";
+}
+.d-icon-rotate-left:before {
+    content: "";
+}
+.d-icon-rotate-right:before {
+    content: "";
+}
+.d-icon-reading:before {
+    content: "";
+}
+.d-icon-feeder:before {
+    content: "";
+}
+.d-icon-birthday-cake2:before {
+    content: "";
+}
+.d-icon-skirt:before {
+    content: "";
+}
+.d-icon-toy:before {
+    content: "";
+}
+.d-icon-butterfly:before {
+    content: "";
+}
+.d-icon-babycare2:before {
+    content: "";
+}
+.d-icon-butterfly2:before {
+    content: "";
+}
+.d-icon-dinner-set:before {
+    content: "";
+}
+.d-icon-ball2:before {
+    content: "";
+}
+.d-icon-apple:before {
+    content: "";
+}
+.d-icon-icecream:before {
+    content: "";
+}
+.d-icon-cake:before {
+    content: "";
+}
+.d-icon-meat:before {
+    content: "";
+}
+.d-icon-bread:before {
+    content: "";
+}
+.d-icon-cocktail:before {
+    content: "";
+}
+.d-icon-food:before {
+    content: "";
+}
+.d-icon-birthday-cake3:before {
+    content: "";
+}
+.d-icon-cash:before {
+    content: "";
+}
+.d-icon-service2:before {
+    content: "";
+}
+.d-icon-car:before {
+    content: "";
+}
+.d-icon-ball3:before {
+    content: "";
+}
+.d-icon-compare:before {
+    content: "";
+}
+.d-icon-jar:before {
+    content: "";
+}
+.d-icon-radish:before {
+    content: "";
+}
+.d-icon-arrow-down:before {
+    content: "";
+}
+.d-icon-arrow-left:before {
+    content: "";
+}
+.d-icon-arrow-right:before {
+    content: "";
+}
+.d-icon-arrow-up:before {
+    content: "";
+}
+.d-icon-earth:before {
+    content: "";
+}
+.d-icon-long-arrow-left:before {
+    content: "";
+}
+.d-icon-long-arrow-right:before {
+    content: "";
+}
+.d-icon-long-arrow-down:before {
+    content: "";
+}
+.d-icon-long-arrow-up:before {
+    content: "";
+}
+.d-icon-pill:before {
+    content: "";
+}
+.d-icon-cylinder:before {
+    content: "";
+}
+.d-icon-medical-bag:before {
+    content: "";
+}
+.d-icon-graph:before {
+    content: "";
+}

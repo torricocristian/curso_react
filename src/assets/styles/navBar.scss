@@ -2,17 +2,19 @@
 .NavBar{
     display: flex;
     justify-content: center;
+    padding: 10px 0;
 
     a{
-       margin-right: 20px;
+       margin-right: 60px;
        transition: .3s;
+       font-weight: bold;
 
        &:last-child{
             margin-right: 0;
        }
 
        &:hover{
-            color: red;
+            color: #26c;
        }
     }
 }

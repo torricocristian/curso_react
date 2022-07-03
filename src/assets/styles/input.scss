@@ -1,0 +1,33 @@
+.input{
+    input{
+        border-radius: 3px;
+        padding: 8px 20px;
+        border: 1px solid #e3e3e3;
+        font-size: 1.15rem;
+        color: #666;
+        box-shadow: none;
+        outline: 0;
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+    }
+
+    &__search{
+        position: relative;
+        display: flex;
+
+        &:before{
+            content: "";
+            font-family: "riode" !important;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 12px;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        input{
+            padding-right: 38px;
+        }
+    }
+}

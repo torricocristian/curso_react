@@ -1,10 +1,16 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import './styles/base.scss';
+import './assets/styles/base.scss';
+import './assets/styles/fonts/riode.scss';
+import Login from './components/Login';
+import Header from './layouts/header/Header';
  
 function App() {
   return (
-    <NavBar />
+    <>
+      <Header />
+
+      {/* <Login /> */}
+    </>
   );
 }
 

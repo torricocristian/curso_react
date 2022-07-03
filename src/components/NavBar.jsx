@@ -1,20 +1,13 @@
-import React from 'react';
-import '../styles/navBar.scss';
-import { Logo } from './Logo';
+import '../assets/styles/navBar.scss';
 
 function NavBar(){
   return (
-    <>
-        <Logo/>
-
-        <nav className='NavBar'>
-            <a href="/">Inicio</a>
-            <a href="/">Productos</a>
-            <a href="/">Nosotros</a>
-            <a href="/">Contacto</a>
-        </nav>
-        
-    </>
+      <nav className='NavBar'>
+          <a href="/">Inicio</a>
+          <a href="/">Productos</a>
+          <a href="/">Nosotros</a>
+          <a href="/">Contacto</a>
+      </nav>
   )
 }
 
