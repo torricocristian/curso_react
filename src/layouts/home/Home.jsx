@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react'
 import axios from '../../api/Axios';
 import { Product } from '../../components/Product';
 import Title from '../../components/Title';
+import ItemsCount from '../../components/ItemsCount';
 import '../../assets/styles/home.scss'
 
 const Home = () => {
@@ -22,18 +23,32 @@ const Home = () => {
 
 
     return (
-        <section className='featured-products'>
-            <div className="container">
-                <h2>
-                    <Title title="Destacados" type="primary"/>         
-                </h2>
-                <div className="row">
-                    {
-                        products.map(product => <Product key={product.id} product={product}></Product>)
-                    }
+        <>
+            <section className='featured-products'>
+                <div className="container">
+                    <h2>
+                        <Title title="Destacados" type="primary"/>         
+                    </h2>
+                    <div className="row">
+                        {
+                            products.map(product => <Product key={product.id} product={product}></Product>)
+                        }
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <ItemsCount 
+                data={
+                    {
+                        className: 'count',
+                        attr: {
+                            'placeholder': 'Cantidad',
+                            'type': 'number'
+                        }
+                    }
+                } 
+            />
+        </>
     )
 }
 
