@@ -47,6 +47,8 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+
+                
                 <NavBar/>
             </div>
         </header>

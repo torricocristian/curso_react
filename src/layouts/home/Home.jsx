@@ -2,16 +2,20 @@ import {useState,useEffect} from 'react'
 import axios from '../../api/Axios';
 import { Product } from '../../components/Product';
 import Title from '../../components/Title';
-import ItemsCount from '../../components/ItemsCount';
 import '../../assets/styles/home.scss'
+import {useParams} from 'react-router-dom';
+
 
 const Home = () => {
-
     const [products, setProducts] = useState([]);
+
+    let { network } = useParams();
+    console.log(network, 'network');
+
 
     useEffect(()=>{
 
-        axios.get('/products')
+        axios.get(`/products`)
         .then(response => {
             setProducts(response.data)
         }).catch(e => {
@@ -19,7 +23,6 @@ const Home = () => {
         })
 
     },[]);
-
 
 
     return (
@@ -36,18 +39,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-            <ItemsCount 
-                data={
-                    {
-                        className: 'count',
-                        attr: {
-                            'placeholder': 'Cantidad',
-                            'type': 'number'
-                        }
-                    }
-                } 
-            />
         </>
     )
 }

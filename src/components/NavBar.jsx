@@ -1,13 +1,14 @@
 import '../assets/styles/navBar.scss';
+import { Link, useParams } from "react-router-dom";
 
 function NavBar(){
+
+
   return (
-      <nav className='NavBar'>
-          <a href="/">Inicio</a>
-          <a href="/">Productos</a>
-          <a href="/">Nosotros</a>
-          <a href="/">Contacto</a>
-      </nav>
+    <nav className='NavBar'>
+        <Link to='/'>Inicio</Link>
+        <Link to='/'>Nosotros</Link>
+    </nav>
   )
 }
 
