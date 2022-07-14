@@ -1,0 +1,23 @@
+.btn{
+    &-primary{
+        border-radius: 3px;
+        background: #222;
+        color: white;
+        transition: .3s;
+        border: 0;
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: bold;
+        padding: 14px 30px;
+        letter-spacing: .7px;
+
+        &:hover{
+            background-color: black;
+        }
+    }
+
+    i{
+        margin-right: 10px;
+        font-size: 18px;
+    }
+}

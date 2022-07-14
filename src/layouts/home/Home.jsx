@@ -8,14 +8,16 @@ import {useParams} from 'react-router-dom';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
-
     let { network } = useParams();
-    console.log(network, 'network');
-
 
     useEffect(()=>{
 
-        axios.get(`/products`)
+        axios.get(`/products`,
+        {
+            params: {
+                'network': network
+            }
+        })
         .then(response => {
             setProducts(response.data)
         }).catch(e => {
