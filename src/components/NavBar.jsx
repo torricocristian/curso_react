@@ -1,13 +1,13 @@
 import '../assets/styles/navBar.scss';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar(){
-
+  const network = location.pathname.toLowerCase().split('/')[1];
 
   return (
     <nav className='NavBar'>
-        <Link to='/'>Inicio</Link>
-        <Link to='/'>Nosotros</Link>
+        <Link to={network}>Inicio</Link>
+        <Link to={network + '/productos'}>Productos</Link>
     </nav>
   )
 }
