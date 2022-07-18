@@ -42,8 +42,8 @@ const PageDetailProduct = () => {
 },[]);
 
   return (
-    <section id="PageDetailProduct">
-        <div className="product-single">
+    <main id="PageDetailProduct">
+        <section className="product-single">
           <div className="container">
               <div className="media">
                 <ImageGallery 
@@ -75,8 +75,8 @@ const PageDetailProduct = () => {
                   </div>
               </div>
           </div>
-        </div>
-    </section>
+        </section>
+    </main>
   )
 }
 

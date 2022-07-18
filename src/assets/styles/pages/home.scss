@@ -1,0 +1,21 @@
+#hero{
+    margin-top: 40px;
+    .container{
+        
+    }
+}
+
+.featured-products{
+    padding: 60px 0;
+
+    .container{
+        .row{
+            display: grid;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 280px));
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+footer{
+    color: white;
+    background: #222;
+    padding: 20px 0;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        .copy{
+            font-size: .85rem;
+        }
+        .socials{
+           a{
+            margin-right: 20px;
+            transition: .3s;
+
+            &:hover{
+                color: #26c;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            svg{          
+                font-size: 1.2rem; 
+            }
+           }
+        }
+    }
+}
