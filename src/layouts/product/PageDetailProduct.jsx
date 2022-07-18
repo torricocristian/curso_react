@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 import axios from '../../api/Axios';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import '../../assets/styles/pages/pageProduct.scss';
 import '../../assets/styles/btn.scss';
@@ -55,6 +55,19 @@ const PageDetailProduct = () => {
                 />
               </div>
               <div className="data">
+
+                <div className="breadcrumb">
+                  <Link to={`/${network}`}>
+                    <i className='d-icon-home'></i>
+                  </Link>
+                  <Link to={`/${network}/productos`}>
+                    Productos
+                  </Link>
+                  <span className='active'>
+                    {product.title}
+                  </span>
+                </div>
+
                 <h1 className='title__primary'>{product.title}</h1>
                 <div className="meta">
                   {product.sku && <span className="sku">SKU: {product.sku}</span>}
