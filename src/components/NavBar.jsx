@@ -1,8 +1,10 @@
 import '../assets/styles/navBar.scss';
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function NavBar(){
-  const network = location.pathname.toLowerCase().split('/')[1];
+  let location = useLocation();
+  let network = location.pathname.toLowerCase().split('/')[1];
 
   return (
     <nav className='NavBar'>

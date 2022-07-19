@@ -9,7 +9,8 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 import PageListProduct from './layouts/product/PageListProduct';
 import PageDetailProduct from './layouts/product/PageDetailProduct';
- 
+
+
 function App() {
   
   return (
@@ -18,8 +19,8 @@ function App() {
       <Header />
 
       <Routes>
-          <Route path="/" element={<Navigate replace to="/coder" />} />
-          <Route path="/:network/"  element={<Home />} />
+          <Route path="/" element={<Navigate to="/coder" replace/>} />
+          <Route path="/:network"  element={<Home />} />
           <Route exact path="/:network/nosotros"  element={<h2>Nosotros</h2>}/>  
           <Route exact path="/:network/productos"  element={<PageListProduct/>}/>  
           <Route exact path="/:network/productos/:slugProduct"  element={<PageDetailProduct />}/>      

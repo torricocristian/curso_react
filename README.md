@@ -16,6 +16,7 @@ Esta parte del proyecto solo traerá los productos desde una API.
 ## Estado
 - Proyecto en desarrollo.
 - ToDo:
+ - [ x ] Breadcrumb en detalle del producto
  - Crear página de búsqueda
  - Crear un endpoint para poder traer el teléfono del header
  - Realizar la funcionalidad de "Mi Carrito" 
