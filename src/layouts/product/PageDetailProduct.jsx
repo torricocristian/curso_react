@@ -11,6 +11,9 @@ import ItemsCount from '../../components/ItemsCount';
 const PageDetailProduct = () => {
   const [product, setProduct] = useState([]);
   const [images, setImages] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState(false);
+
   let { network, slugProduct } = useParams();
 
   useEffect(()=>{
@@ -40,6 +43,15 @@ const PageDetailProduct = () => {
     })
 
 },[]);
+
+    function handlerQuantity(newQuantity) {
+        if (newQuantity <= product.stock && newQuantity > 0) {
+            setError(false);
+            setQuantity(newQuantity);
+        }else{
+            setError(true);
+        }
+    }
 
   return (
     <main id="PageDetailProduct">
@@ -81,11 +93,16 @@ const PageDetailProduct = () => {
                   dangerouslySetInnerHTML={{ __html: product.description }}></div>
 
                   <div className="add-to-cart">
-                    <ItemsCount/>
+
+                    <ItemsCount stock={product.stock} quantity={quantity} handlerQuantity={handlerQuantity}/>
+
                     <button className="btn btn-primary">
                       <i className='d-icon-bag'></i>Agregar al carrito
                     </button>
+                
                   </div>
+
+                  {error && <span className='error'>Solo tenemos {product.stock} productos en stock</span>}
               </div>
           </div>
         </section>
