@@ -7,14 +7,21 @@ import '../../assets/styles/btn.scss';
 import '../../assets/styles/fonts/riode.scss';
 import ItemsCount from '../../components/ItemsCount';
 
+import { useCart } from '../../hooks/useCart';
+
 
 const PageDetailProduct = () => {
   const [product, setProduct] = useState([]);
   const [images, setImages] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(false);
+  const { addProduct, cartItems, increase } = useCart();
 
   let { network, slugProduct } = useParams();
+
+  const isInCart = product => {
+      return !!cartItems.find(item => item.id === product.id);
+  }
 
   useEffect(()=>{
 
@@ -96,10 +103,34 @@ const PageDetailProduct = () => {
 
                     <ItemsCount stock={product.stock} quantity={quantity} handlerQuantity={handlerQuantity}/>
 
-                    <button className="btn btn-primary">
-                      <i className='d-icon-bag'></i>Agregar al carrito
-                    </button>
-                
+                    {
+                        isInCart(product) && 
+                        <button 
+                        onClick={() => increase(
+                          {
+                            ...product,
+                            itemCount: quantity
+                          }
+                        )}
+                        className="btn btn-primary">
+                          <i className='d-icon-bag'></i>Añadir más
+                        </button>
+                    }
+
+                    {
+                        !isInCart(product) && 
+                        <button 
+                        onClick={() => addProduct(
+                          {
+                            ...product,
+                            itemCount: quantity
+                          }
+                        )}
+                        className="btn btn-primary">
+                          <i className='d-icon-bag'></i>Agregar al carrito
+                        </button>
+                    }
+              
                   </div>
 
                   {error && <span className='error'>Solo tenemos {product.stock} productos en stock</span>}

@@ -10,25 +10,30 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import PageListProduct from './layouts/product/PageListProduct';
 import PageDetailProduct from './layouts/product/PageDetailProduct';
 
+import CartContextProvider from './context/CartContext';
+
 
 function App() {
   
   return (
 
-    <BrowserRouter>
-      <Header />
 
-      <Routes>
-          <Route path="/" element={<Navigate to="/coder" replace/>} />
-          <Route path="/:network"  element={<Home />} />
-          <Route exact path="/:network/nosotros"  element={<h2>Nosotros</h2>}/>  
-          <Route exact path="/:network/productos"  element={<PageListProduct/>}/>  
-          <Route exact path="/:network/productos/:slugProduct"  element={<PageDetailProduct />}/>      
-      </Routes>
+    <CartContextProvider>
+      <BrowserRouter>
+        <Header />
 
-      <Footer />
-      
-    </BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Navigate to="/coder" replace/>} />
+            <Route path="/:network"  element={<Home />} />
+            <Route exact path="/:network/nosotros"  element={<h2>Nosotros</h2>}/>  
+            <Route exact path="/:network/productos"  element={<PageListProduct/>}/>  
+            <Route exact path="/:network/productos/:slugProduct"  element={<PageDetailProduct />}/>      
+        </Routes>
+
+        <Footer />
+        
+      </BrowserRouter>
+    </CartContextProvider>
 
     
       

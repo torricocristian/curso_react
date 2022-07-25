@@ -1,4 +1,5 @@
-import React from 'react'
+import {useContext} from 'react'
+import { CartContext } from '../../context/CartContext';
 import NavBar from '../../components/NavBar'
 import Logo from '../../components/Logo'
 import '../../assets/styles/header.scss'
@@ -10,6 +11,7 @@ import Input from '../../components/Input'
 
 const Header = () => {
 
+    const {itemCount} = useContext(CartContext);
 
 
     return (
@@ -43,7 +45,9 @@ const Header = () => {
                         </div>
                         <div className="cart-icon">
                             <i className='d-icon-bag'></i>
-                            <span className='cart-count'>2</span>
+                            {
+                                itemCount > 0 && <span className='cart-count'>{itemCount}</span>
+                            }
                         </div>
                     </div>
                 </div>
