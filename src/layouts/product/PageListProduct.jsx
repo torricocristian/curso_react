@@ -1,10 +1,10 @@
 
 import {useState,useEffect} from 'react'
-import axios from '../../api/Axios';
 import { Product } from '../../components/Product';
 import Title from '../../components/Title';
 import '../../assets/styles/pages/PageListProduct.scss'
 import {useParams} from 'react-router-dom';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 
 const PageListProduct = () => {
@@ -13,18 +13,13 @@ const PageListProduct = () => {
 
   useEffect(()=>{
 
-      axios.get(`/products`,
-      {
-          params: {
-              'network': network
-          }
-      })
-      .then(response => {
-          setProducts(response.data)
-      }).catch(e => {
-          console.log(e);
-      })
-
+    const db = getFirestore();
+    getDocs(collection(db, 'items')).then((snapshot) => {
+        console.log(snapshot.docs)
+        const dataExtraida = snapshot.docs.map(datos => datos.data()) 
+        setProducts(dataExtraida)
+    }) 
+    
   },[]);
 
 

@@ -1,11 +1,11 @@
 import {useState,useEffect} from 'react';
-import axios from '../../api/Axios';
 import {useParams, Link} from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import '../../assets/styles/pages/pageProduct.scss';
 import '../../assets/styles/btn.scss';
 import '../../assets/styles/fonts/riode.scss';
 import ItemsCount from '../../components/ItemsCount';
+import { getFirestore, collection, getDocs, where, query, limit } from 'firebase/firestore';
 
 import { useCart } from '../../hooks/useCart';
 
@@ -24,17 +24,21 @@ const PageDetailProduct = () => {
 
   useEffect(()=>{
 
-    axios.get(`/product/${slugProduct}`,
-    {
-        params: {
-            'network': network
-        }
-    })
-    .then(response => {
-        setProduct(response.data)
+    const db = getFirestore();
 
+    //Si quiero hacer el filtrado por categoría sería lo mismo. pero con el siguiente código:
+    //collection.where("category", "==", category);
+    const q = query(
+      collection(db, 'items'),
+      where('slug', '==', slugProduct),
+      limit(1)
+    );
+    getDocs(q).then((snapshot) => {
+        console.log(snapshot.docs)
+        const dataExtraida = snapshot.docs.map(datos => datos.data()) 
+        setProduct(dataExtraida[0])
         setImages(
-          response.data.gallery.map(image => 
+          dataExtraida[0].gallery.map(image => 
             (
               {
                 original: image,
@@ -43,10 +47,7 @@ const PageDetailProduct = () => {
             )
           )
         )
-
-    }).catch(e => {
-        console.log(e);
-    })
+    }) 
 
 },[]);
 
