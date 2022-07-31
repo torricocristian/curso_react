@@ -7,7 +7,7 @@ export const sumItems = cartItems => {
     Storage(cartItems);
 
     let itemCount = cartItems.reduce((total, product) => total + product.quantity, 0);
-    let total = cartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+    let total = cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
     return { itemCount, total }
 }
 
@@ -33,15 +33,22 @@ export const CartReducer = (state, action) => {
                 ...sumItems(state.cartItems.filter(item => item.id !== action.payload.id)),
                 cartItems: [...state.cartItems.filter(item => item.id !== action.payload.id)]
             }
-        case "INCREASE":
+        case "UPDATE_ITEM":
             state.cartItems[state.cartItems.findIndex(item => item.id === action.payload.id)].quantity += action.payload.itemCount;
             return {
                 ...state,
                 ...sumItems(state.cartItems),
                 cartItems: [...state.cartItems]
             }
+        case "INCREASE":
+            state.cartItems[state.cartItems.findIndex(item => item.id === action.payload.id)].quantity++;
+            return {
+                ...state,
+                ...sumItems(state.cartItems),
+                cartItems: [...state.cartItems]
+            }
         case "DECREASE":
-            state.cartItems[state.cartItems.findIndex(item => item.id === action.payload.id)].quantity--
+            state.cartItems[state.cartItems.findIndex(item => item.id === action.payload.id)].quantity--;
             return {
                 ...state,
                 ...sumItems(state.cartItems),

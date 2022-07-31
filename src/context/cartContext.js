@@ -18,6 +18,10 @@ const CartContextProvider = ({children}) => {
         dispatch({type: 'DECREASE', payload})
     }
 
+    const updateProduct = payload => {
+        dispatch({type: 'UPDATE_ITEM', payload})
+    }
+
     const addProduct = payload => {
         dispatch({type: 'ADD_ITEM', payload})
     }
@@ -36,14 +40,17 @@ const CartContextProvider = ({children}) => {
     }
 
     const contextValues = {
-        removeProduct,
-        addProduct,
         increase,
         decrease,
+        removeProduct,
+        addProduct,
+        updateProduct,
         clearCart,
         handleCheckout,
         ...state
     } 
+
+    
 
     return ( 
         <CartContext.Provider value={contextValues} >

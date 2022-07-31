@@ -1,18 +1,18 @@
-import {useContext} from 'react'
-import { CartContext } from '../../context/CartContext';
 import NavBar from '../../components/NavBar'
 import Logo from '../../components/Logo'
-import '../../assets/styles/header.scss'
-
-import '../../assets/styles/boxes.scss'
-import '../../assets/styles/cart/shopping-cart.scss'
 import IconBox from '../../components/IconBox'
 import Input from '../../components/Input'
+import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
+
+import '../../assets/styles/header.scss'
+import '../../assets/styles/boxes.scss'
+import '../../assets/styles/cart/shopping-cart.scss'
 
 const Header = () => {
 
-    const {itemCount} = useContext(CartContext);
-
+    const { itemCount, total } = useCart();
+    let network = location.pathname.toLowerCase().split('/')[1];
 
     return (
         <header>
@@ -40,15 +40,15 @@ const Header = () => {
                                 Mi Carrito
                             </span>
                             <span className="cart-price">
-                                $0.00
+                                ${total}
                             </span>
                         </div>
-                        <div className="cart-icon">
+                        <Link to={'/' + network + '/cart/'} className="cart-icon">
                             <i className='d-icon-bag'></i>
                             {
                                 itemCount > 0 && <span className='cart-count'>{itemCount}</span>
                             }
-                        </div>
+                        </Link>
                     </div>
                 </div>
 

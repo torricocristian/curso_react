@@ -15,9 +15,8 @@ const PageDetailProduct = () => {
   const [images, setImages] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(false);
-  const { addProduct, cartItems, increase } = useCart();
-
-  let { network, slugProduct } = useParams();
+  const { addProduct, updateProduct, cartItems } = useCart();
+  const { network, slugProduct } = useParams();
 
   const isInCart = product => {
       return !!cartItems.find(item => item.id === product.id);
@@ -52,7 +51,10 @@ const PageDetailProduct = () => {
 },[]);
 
     function handlerQuantity(newQuantity) {
+ 
         if (newQuantity <= product.stock && newQuantity > 0) {
+           
+            product.quantity = newQuantity;
             setError(false);
             setQuantity(newQuantity);
         }else{
@@ -101,12 +103,12 @@ const PageDetailProduct = () => {
 
                   <div className="add-to-cart">
 
-                    <ItemsCount stock={product.stock} quantity={quantity} handlerQuantity={handlerQuantity}/>
+                    <ItemsCount product={product} handlerQuantity={handlerQuantity}/>
 
                     {
                         isInCart(product) && 
                         <button 
-                        onClick={() => increase(
+                        onClick={() => updateProduct(
                           {
                             ...product,
                             itemCount: quantity

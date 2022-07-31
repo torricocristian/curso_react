@@ -1,0 +1,15 @@
+.alert{
+    padding: 15px 20px;
+    border-radius: 5px;
+    text-align: center;
+
+    a{
+        text-decoration: underline;
+    }
+
+    &__warning{
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+}
