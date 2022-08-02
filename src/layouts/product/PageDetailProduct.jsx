@@ -18,8 +18,6 @@ const PageDetailProduct = () => {
   const { addProduct, updateProduct, cartItems } = useCart();
   const { network, slugProduct } = useParams();
 
-  const [query, setQuery] = useState(0);
-
   const isInCart = product => {
       return !!cartItems.find(item => item.id === product.id);
   }
