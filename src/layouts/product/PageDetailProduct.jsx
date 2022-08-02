@@ -18,6 +18,8 @@ const PageDetailProduct = () => {
   const { addProduct, updateProduct, cartItems } = useCart();
   const { network, slugProduct } = useParams();
 
+  const [query, setQuery] = useState(0);
+
   const isInCart = product => {
       return !!cartItems.find(item => item.id === product.id);
   }
@@ -25,16 +27,12 @@ const PageDetailProduct = () => {
   useEffect(()=>{
 
     const db = getFirestore();
-
-    //Si quiero hacer el filtrado por categoría sería lo mismo. pero con el siguiente código:
-    //collection.where("category", "==", category);
     const q = query(
       collection(db, 'items'),
       where('slug', '==', slugProduct),
       limit(1)
     );
     getDocs(q).then((snapshot) => {
-        console.log(snapshot.docs)
         const dataExtraida = snapshot.docs.map(datos => datos.data()) 
         setProduct(dataExtraida[0])
         setImages(
