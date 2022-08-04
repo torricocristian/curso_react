@@ -9,7 +9,7 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 const ShoppingCart = () => {
 
-  const { increase, decrease, removeProduct, cartItems, total} = useCart();
+  const { increase, decrease, removeProduct, cartItems, total, clearCart} = useCart();
   const { network } = useParams();
   const [success, setSuccess] = useState(false);
 
@@ -43,7 +43,6 @@ const ShoppingCart = () => {
   function removeItem(product) {
     removeProduct(product);
   }
-
 
   return (
     <main id="ShoppingCart">
@@ -104,9 +103,21 @@ const ShoppingCart = () => {
 
       <section className='cta'>
           <div className="container">
-            <button className="btn btn-primary" onClick={()=>handleClick()}>
-              Enviar productos
-            </button>
+
+            
+
+            {
+              cartItems.length > 0 && 
+              <>
+                <button className="btn btn-primary" onClick={()=>handleClick()}>
+                  Enviar productos
+                </button>
+
+                <button className="btn btn-primary" onClick={()=>clearCart()}>
+                  Limpiar carrito
+                </button>
+              </>
+            }
 
             {   
               success && <div className="alert alert__warning">¡Pedido realizado!</div>
