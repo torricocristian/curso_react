@@ -5,6 +5,9 @@ El sistema apunta a ampliar la visibilidad de un emprendimiento, brindando un ad
 
 Esta parte del proyecto solo traerá los productos desde una API.
 
+## Preview
+![alt text](readme_img.gif "preview")
+
 ## Pasos para levantarlo en desarrollo
 
 1. Ingresar en consola `npm start`
@@ -19,7 +22,7 @@ Esta parte del proyecto solo traerá los productos desde una API.
  - [ x ] Breadcrumb en detalle del producto
  - Crear página de búsqueda
  - Crear un endpoint para poder traer el teléfono del header
- - Realizar la funcionalidad de "Mi Carrito" 
+ - [ x ]Realizar la funcionalidad de "Mi Carrito" 
 
 
 
