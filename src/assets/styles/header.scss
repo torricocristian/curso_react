@@ -1,11 +1,79 @@
 header{
     box-shadow: 0 2px 10px 0 #0000005c;
     padding-bottom: 15px;
+
+    &.open-menu{
+        .top{
+            .menu-mobile{
+                &__item{
+                    &:nth-child(1){
+                        top: 42%;
+                        transform: rotate(45deg);
+                        transition: top 0.25s, transform 0.25s 0.25s;
+                    }
+    
+                    &:nth-child(2){
+                        opacity: 0;
+                        transition: all 0.25s;
+                    }
+    
+                    &:nth-child(3){
+                        bottom: 42%;
+                        transform: rotate(-45deg);
+                        transition: bottom 0.25s, transform 0.25s 0.25s;
+                    }
+                }
+            }    
+        }
+ 
+        .NavBar{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
     
     .top{
         display: flex;
         align-items: center;
         padding: 25px 0;
+
+        .menu-mobile{
+            display: none;
+            position: relative;
+            width: 32px;
+            height: 22px;
+            font-size: 6px;
+            cursor: pointer;
+            margin: 0;
+            margin-right: 15px;
+
+            &__item{
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background: black;
+                border-radius: 2.5px;
+               
+
+                &:nth-child(1){
+                    top: 0;
+                    transition: top 0.25s 0.25s, transform 0.25s;
+                }
+
+                &:nth-child(2){
+                    transition: all 0.25s 0.25s;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(3){
+                    bottom: 0;
+                    transition: bottom 0.25s 0.25s, transform 0.25s;
+                }
+
+            }
+        }
 
         .shopping-cart{
            
@@ -29,3 +97,70 @@ header{
         }
     }
 }
+
+
+@media (max-width: 960px) {
+
+    header .top{
+        flex-wrap: wrap;
+
+        .search{
+            width: 100%;
+            flex: initial;
+            order: 5;
+            margin-right: 0;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        .logo{
+            margin-right: auto;
+        }
+    }
+
+}
+
+@media (max-width: 599px) {
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 20;
+        padding-bottom: 0;
+
+        .top{
+            padding-top: 10px;
+            padding-bottom: 15px;
+    
+            .menu-mobile{
+                display: block;
+            }
+
+            .call-us{
+                margin-right: 10px;
+                padding-right: 10px;
+
+                .data{
+                    display: none;
+                }
+
+                &.icon-box .icon{
+                    margin-right: 0;
+
+                    svg{
+                        font-size: 28px;
+                    }
+                }
+            }
+
+            .search input{
+                font-size: 16px;
+                line-height: 18px;
+                padding: 8px 20px;
+            }
+        }
+    }
+}
+

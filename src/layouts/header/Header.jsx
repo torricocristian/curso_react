@@ -14,10 +14,23 @@ const Header = () => {
     const { itemCount, total } = useCart();
     let network = location.pathname.toLowerCase().split('/')[1];
 
+    //[MENU] Funcionalidad para mostrar y ocultar el menú, al hacer click en el icono
+    const showMenu = () => {
+        let header = document.querySelector('header');
+        header.classList.toggle('open-menu');
+    }
+
     return (
         <header>
             <div className="container">
                 <div className="top">
+
+                    <div className="menu-mobile" onClick={showMenu}>
+                        <span className="menu-mobile__item"></span>
+                        <span className="menu-mobile__item"></span>
+                        <span className="menu-mobile__item"></span>
+                    </div>
+
                     <Logo />
                     <div className="search">
                         <Input 
@@ -32,8 +45,10 @@ const Header = () => {
                         />
                     </div>
 
-                    <IconBox className="call-us" textTop="Llamanos" textBottom="15-44443434" icon="d-icon-phone"/>
-
+                    <a href="https://wa.me/541144444444" target="_blank">
+                        <IconBox className="call-us" textTop="Hablemos" textBottom="15-44443434" icon="whatsapp" component="fontawesome"/>
+                    </a>
+                    
                     <div className="shopping-cart">
                         <div className="data">
                             <span className="cart-name">

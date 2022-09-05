@@ -5,6 +5,7 @@ import Title from '../../components/Title';
 import '../../assets/styles/slider.scss'
 import '../../assets/styles/pages/home.scss'
 import {useParams} from 'react-router-dom';
+// import Login from '../../components/Login';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper";
@@ -52,39 +53,45 @@ const Home = () => {
     return (
         <main>
 
-            <section id="hero">
-                <div className="container">
-                <Swiper
-                    id="main"
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    pagination={{clickable: true}}
-                    className="slider slider__primary"
-                >
-                    {imagesHero.map((image) => (
-                        <SwiperSlide key={image.id}>
-                            <img
-                                src={image.image}
-                                alt={image.title}
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                </div>
-            </section>
-
-            <section className='featured-products'>
-                <div className="container">
-                    <h2>
-                        <Title title="Productos Destacados" type="primary"/>         
-                    </h2>
-                    <div className="row">
-                        {
-                            products.map(product => <Product key={product.id} product={product}></Product>)
-                        }
+            {
+                imagesHero.length > 0 &&
+                <section id="hero">
+                    <div className="container">
+                    <Swiper
+                        id="main"
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        pagination={{clickable: true}}
+                        className="slider slider__primary"
+                    >
+                        {imagesHero.map((image) => (
+                            <SwiperSlide key={image.id}>
+                                <img
+                                    src={image.image}
+                                    alt={image.title}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                     </div>
-                </div>
-            </section>
+                </section>
+            }
+
+            {
+                products.length > 0 &&
+                <section className='featured-products'>
+                    <div className="container">
+                        <h2>
+                            <Title title="Productos Destacados" type="primary"/>         
+                        </h2>
+                        <div className="row">
+                            {
+                                products.map(product => <Product key={product.id} product={product}></Product>)
+                            }
+                        </div>
+                    </div>
+                </section>
+            }
         </main>
     )
 }

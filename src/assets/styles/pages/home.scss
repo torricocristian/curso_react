@@ -1,4 +1,6 @@
 #hero{
+    margin-bottom: 60px;
+
     .container{
         
     }
@@ -14,5 +16,11 @@
             justify-content: center;
             text-align: center;
         }
+    }
+}
+
+@media (max-width: 599px) {
+    #hero{
+        margin-bottom: 40px;
     }
 }

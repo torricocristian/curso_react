@@ -532,3 +532,17 @@ a:focus, a:hover{
     }
 }
 
+
+@media screen and (max-width: 960px){
+    main{
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 599px){
+    body{
+        padding-top: 109px;
+    }
+}
+
+

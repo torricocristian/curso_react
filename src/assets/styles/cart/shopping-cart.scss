@@ -44,3 +44,17 @@
         }
     }
 }
+
+@media (max-width: 599px) {
+    .shopping-cart{
+        .data{
+            display: none;
+        }
+
+        .cart-icon{
+            i{
+                font-size: 25px;
+            }
+        }
+    }
+}
