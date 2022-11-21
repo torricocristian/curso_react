@@ -23,7 +23,7 @@ function App() {
         <Header />
 
         <Routes>
-            <Route path="/" element={<Navigate to="/coder" replace/>} />
+            <Route path="/" element={<h2>Home</h2>} />
             <Route path="/:network"  element={<Home />} />
             <Route exact path="/:network/nosotros"  element={<h2>Nosotros</h2>}/>  
             <Route exact path="/:network/cart"  element={<ShoppingCart/>}/>  

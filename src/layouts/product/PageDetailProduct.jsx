@@ -8,6 +8,7 @@ import '../../assets/styles/fonts/riode.scss';
 import ItemsCount from '../../components/ItemsCount';
 
 import { useCart } from '../../hooks/useCart';
+import placeholder from '../../assets/images/placeholder.jpg';
 
 
 const PageDetailProduct = () => {
@@ -33,16 +34,27 @@ const PageDetailProduct = () => {
     .then(response => {
         setProduct(response.data)
 
-        setImages(
-          response.data.gallery.map(image => 
-            (
-              {
-                original: image,
-                thumbnail: image,
-              }
-            )
+        let images_temp = response.data.gallery.map(image => 
+          (
+            {
+              original: image,
+              thumbnail: image,
+            }
           )
         )
+
+        //json placeholder
+        if(images_temp.length === 0){
+          images_temp = [
+            {
+              original: placeholder,
+              thumbnail: placeholder,
+            }
+          ]
+        }
+        setImages(images_temp);
+
+        
 
     }).catch(e => {
         console.log(e);

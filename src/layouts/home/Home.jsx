@@ -42,7 +42,29 @@ const Home = () => {
             }
         })
         .then(response => {
-            setImagesHero(response.data)
+            console.log(response, 'response banner');
+            if( response.data.length > 0 ){
+                setImagesHero(response.data)
+            }else{
+                setImagesHero(
+                    [
+                        {
+                            id: 1,
+                            title: 'placeholder',
+                            image: 'https://alode.store/wp-content/uploads/sites/2/2022/09/hero_1.jpeg'
+                        },
+                        {
+                            id: 2,
+                            title: 'placeholder',
+                            image: 'https://alode.store/wp-content/uploads/sites/2/2022/09/hero_2.jpeg'
+                        }
+                    ]
+                )
+            }
+           
+            
+            
+            
         }).catch(e => {
             console.log(e);
         })
@@ -52,9 +74,7 @@ const Home = () => {
 
     return (
         <main>
-
             {
-                imagesHero.length > 0 &&
                 <section id="hero">
                     <div className="container">
                     <Swiper
@@ -86,7 +106,7 @@ const Home = () => {
                         </h2>
                         <div className="row">
                             {
-                                products.map(product => <Product key={product.id} product={product}></Product>)
+                                products && products.map(product => <Product key={product.id} product={product}></Product>)
                             }
                         </div>
                     </div>
